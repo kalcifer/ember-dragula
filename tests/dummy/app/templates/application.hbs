@@ -1,3 +1,32 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+{{#ember-dragula config=model.dragulaoptions parent=model.parent}}
+	{{#ember-dragula-container created='created' parent=model.parent}}
+		{{#tree-component data='We ll move these items'}}
+		{{/tree-component}}
+		<div>
+			We ll move these items
+		</div>
+		<div>
+			To test if everything is fine.
+		</div>
+		<div>
+			We ll move these items
+		</div>
+		<div>
+			To test if everything is fine.
+		</div>
+	{{/ember-dragula-container}}
+	{{#ember-dragula-container created='created' parent=model.parent}}
+		<div>
+			We ll move these items
+		</div>
+		<div>
+			To test if everything is fine.
+		</div>
+		<div>
+			We ll move these items
+		</div>
+		<div>
+			To test if everything is fine.
+		</div>
+	{{/ember-dragula-container}}
+{{/ember-dragula}}

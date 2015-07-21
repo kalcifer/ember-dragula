@@ -1,7 +1,7 @@
 {
   "name": "ember-dragula",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember wrapper for dragula https://github.com/bevacqua/dragula",
   "directories": {
     "doc": "doc",
     "test": "tests"
