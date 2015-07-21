@@ -15,11 +15,5 @@ export default Ember.Component.extend({
 				this.sendAction('dragulaEvent', event.name, data);
 			}.bind(this))
 		}.bind(this)) : ""
-	},
-	actions:{
-		'created':function(data){
-			this.drake.containers.pushObject(data);
-			return false;
-		}
 	}
 })

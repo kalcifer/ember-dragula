@@ -35,7 +35,9 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-dragula",
+    "dragulajs"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0"
