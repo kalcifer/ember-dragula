@@ -1,6 +1,6 @@
 {
   "name": "ember-dragula",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Ember wrapper for dragula https://github.com/bevacqua/dragula",
   "directories": {
     "doc": "doc",
