@@ -11,8 +11,8 @@ export default Ember.Component.extend({
 	},
 	setEventListeners:function(){
 		this.config.eventList ? this.config.eventList.forEach(function(event){
-			this.drake.on(event.name, function(data){
-				this.sendAction('dragulaEvent', event.name, data);
+			this.drake.on(event.name, function(){
+				this.sendAction('dragulaEvent', event.name, arguments);
 			}.bind(this))
 		}.bind(this)) : ""
 	}
