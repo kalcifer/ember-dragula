@@ -1,6 +1,35 @@
 # Ember-dragula
 
-This README outlines the details of collaborating on this Ember addon.
+##Introduction
+
+An ember addon that allows to use Dragula - A drag and drop library (https://github.com/bevacqua/dragula)
+
+##How to use
+
+###Install addon
+ember install ember-dragula
+
+###Syntax
+The following syntax is required to get the addon working.
+```
+{{#ember-dragula config=dragulaoptions dragulaEvent='dragulaEvent' }}
+	{{#ember-dragula-container }}
+		<div>
+			...
+		</div>
+		<div>
+		</div>
+	{{/ember-dragula-container}}
+	{{#ember-dragula-container }}
+		<div>
+			...
+		</div>
+		<div>
+		</div>
+	{{/ember-dragula-container}}
+{{/ember-dragula}}
+```
+Since dragula uses containers whose elements we can drag and drop. So ```ember-dragula``` is the ember container for all dragula containers(including those defined in ```isContainer```. It is also the component that manages the lifecycle for the associated drake.
 
 ## Installation
 
