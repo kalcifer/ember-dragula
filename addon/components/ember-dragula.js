@@ -15,5 +15,10 @@ export default Ember.Component.extend({
 				this.sendAction('dragulaEvent', event.name, arguments);
 			}.bind(this))
 		}.bind(this)) : ""
+	},
+	willDestroyElement:function(){
+		this.drake.containers.removeObject(this.element);
+		this.drake.destroy();
+		this.set('drake', '');
 	}
 })

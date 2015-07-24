@@ -19,7 +19,7 @@ export default Ember.Route.extend({
 	},
 	actions:{
 		'dragulaEvent':function(eventName, data){
-
+			console.log();
 		}
 	}
 });
