@@ -12,7 +12,7 @@ ember install ember-dragula
 ###Syntax
 The following syntax is required to get the addon working.
 ```
-{{#ember-dragula config=dragulaoptions dragulaEvent='dragulaEvent' }}
+{{#ember-dragula config=dragulaconfig dragulaEvent='dragulaEvent' }}
 	{{#ember-dragula-container }}
 		<div>
 			...
@@ -30,6 +30,25 @@ The following syntax is required to get the addon working.
 {{/ember-dragula}}
 ```
 Since dragula uses containers whose elements we can drag and drop. So ```ember-dragula``` is the ember container for all dragula containers(including those defined in ```isContainer```. It is also the component that manages the lifecycle for the associated drake.
+
+###Passing options
+
+In the above code snippet, the config parameter must be in the following format.
+```
+	'dragulaconfig':{
+				'options':{
+					copy: false,           
+					revertOnSpill: false,  
+					removeOnSpill: false
+					//Other options from the dragula source page.
+				},
+				'eventList':[{
+					name:'drag'
+				},{
+					name:'drop'
+				}]// all the events that you want to listen to. TBD - will make this simpler.
+			}
+```
 
 ## Installation
 
