@@ -15,7 +15,7 @@ export default Ember.Route.extend({
 					name:'drop'
 				}]
 			}
-		}
+		};
 	},
 	actions:{
 		'dragulaEvent':function(eventName, data){
