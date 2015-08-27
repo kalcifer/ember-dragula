@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kalcifer/ember-dragula.svg?branch=master)](https://travis-ci.org/kalcifer/ember-dragula)
 # Ember-dragula
 
 ##Introduction
