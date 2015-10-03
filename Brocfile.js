@@ -12,7 +12,7 @@ var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 */
 
 var app = new EmberAddon();
-app.import(app.bowerDirectory + '/dragula/dist/dragula.js');
-app.import(app.bowerDirectory + '/dragula/dist/dragula.css');
+app.import(app.bowerDirectory + '/dragula.js/dist/dragula.js');
+app.import(app.bowerDirectory + '/dragula.js/dist/dragula.css');
 
 module.exports = app.toTree();
