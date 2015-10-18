@@ -4,10 +4,9 @@ export default Ember.Component.extend({
 	willInsertElement:function(){
 		var options = this.config.options || {};
 		this.set('drake', window.dragula(options));
-		this.set('parent', this);
 	},
 	didInsertElement:function(){
-		this.setEventListeners();	
+		this.setEventListeners();
 	},
 	setEventListeners:function(){
 		if(this.config.eventList){
