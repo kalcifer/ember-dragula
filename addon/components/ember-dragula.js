@@ -9,13 +9,13 @@ export default Component.extend({
 	}),
 
 	setEventListeners: on('didInsertElement', function () {
-		if (!this.config.eventList) {
+		if (!this.config.enabledEvents) {
       return;
     }
-		this.config.eventList.forEach(event => {
-			this.drake.on(event.name, function () {
-				this.sendAction('dragulaEvent', event.name, arguments);
-			}.bind(this));
+		this.config.enabledEvents.forEach(eventName => {
+			this.drake.on(eventName, (...args) => {
+        this.sendAction(eventName, args);
+      });
 		});
 	}),
 
