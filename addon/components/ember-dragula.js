@@ -4,15 +4,15 @@ const {Component, on} = Ember;
 
 export default Component.extend({
 	registerDrake: on('willInsertElement', function () {
-		var options = this.config.options || {};
+		var options = this.get('config.options') || {};
 		this.set('drake', window.dragula(options));
 	}),
 
 	setEventListeners: on('didInsertElement', function () {
-		if (!this.config.enabledEvents) {
+		if (!this.get('config.enabledEvents')) {
       return;
     }
-		this.config.enabledEvents.forEach(eventName => {
+		this.get('config.enabledEvents').forEach(eventName => {
 			this.drake.on(eventName, (...args) => {
         this.sendAction(eventName, args);
       });
