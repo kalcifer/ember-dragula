@@ -46,9 +46,6 @@
     "ember-cli-babel": "^5.1.5",
     "rsvp": "^3.2.1"
   },
-  "resolutions": {
-    "ember": "2.3.0"
-  },
   "ember-addon": {
     "configPath": "tests/dummy/config"
   }
