@@ -18,6 +18,7 @@ This will install ember-dragula and dragula and wire everything up for you. Now 
 
 ### Example
 
+
 ```hbs
 {{#ember-dragula config=dragulaconfig}}
 	{{#ember-dragula-container }}
