@@ -7,7 +7,8 @@ export default Ember.Route.extend({
 				'options':{
 					copy: false,           // elements are moved by default, not copied
 					revertOnSpill: false,  // spilling will put the element back where it was dragged from, if this is true
-					removeOnSpill: false
+					removeOnSpill: false,
+					mirrorContainer:document.getElementById('mirror')
 				},
 				'eventList':[{
 					name:'drag'
