@@ -21,18 +21,19 @@ export default Component.extend({
         this.destroyDrake();
         var options = this.get('config.options') || {};
         this.set('drake', window.dragula(options));
+        this.setEventListeners();
     },
 
-    setEventListeners: on('didInsertElement', function () {
+    setEventListeners: function () {
         if (!this.get('config.enabledEvents')) {
             return;
         }
         this.get('config.enabledEvents').forEach(eventName => {
             this.get('drake').on(eventName, (...args) => {
-                this.sendAction(eventName, args);
+                this.sendAction(eventName, ...args);
             });
         });
-    }),
+    },
 
     cleanupDrake: on('willDestroyElement', function () {
         this.destroyDrake();
