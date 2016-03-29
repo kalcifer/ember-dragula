@@ -3,25 +3,39 @@ import Ember from 'ember';
 const {Component, on} = Ember;
 
 export default Component.extend({
-	registerDrake: on('willInsertElement', function () {
-		var options = this.get('config.options') || {};
-		this.set('drake', window.dragula(options));
-	}),
 
-	setEventListeners: on('didInsertElement', function () {
-		if (!this.get('config.enabledEvents')) {
-      return;
-    }
-		this.get('config.enabledEvents').forEach(eventName => {
-			this.drake.on(eventName, (...args) => {
-        this.sendAction(eventName, args);
-      });
-		});
-	}),
+    drake: null,
 
-  destroyDrake: on('willDestroyElement', function () {
-		this.drake.containers.removeObject(this.element);
-		this.drake.destroy();
-		this.set('drake', '');
-	})
+    destroyDrake: function () {
+        var drake = this.get('drake');
+        if (drake) {
+            if (this.element) {
+                drake.containers.removeObject(this.element);
+            }
+            drake.destroy();
+        }
+    },
+
+    didReceiveAttrs: function () {
+        this._super(...arguments);        
+        this.destroyDrake();
+        var options = this.get('config.options') || {};
+        this.set('drake', window.dragula(options));
+    },
+
+    setEventListeners: on('didInsertElement', function () {
+        if (!this.get('config.enabledEvents')) {
+            return;
+        }
+        this.get('config.enabledEvents').forEach(eventName => {
+            this.get('drake').on(eventName, (...args) => {
+                this.sendAction(eventName, args);
+            });
+        });
+    }),
+
+    cleanupDrake: on('willDestroyElement', function () {
+        this.destroyDrake();
+        this.set('drake', null);
+    })
 });
