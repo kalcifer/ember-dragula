@@ -70,7 +70,7 @@ If you can not nest the markup directly, you can pass the `drake` instance down 
 ```hbs
 {{#ember-dragula config=dragulaconfig as |drake|}}
 	<div>
-		{#ember-dragula-container drake=drake}}
+		{{#ember-dragula-container drake=drake}}
 			<div>drag me</div>
 			<div>or me</div>
 		{{/ember-dragula-container}}
