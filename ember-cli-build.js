@@ -7,8 +7,8 @@ module.exports = function(defaults) {
     // Add options here
   });
 
-  app.import(app.bowerDirectory + '/dragula.js/dist/dragula.js');
-  app.import(app.bowerDirectory + '/dragula.js/dist/dragula.css');
+  app.import(app.bowerDirectory + '/dragula/dist/dragula.js');
+  app.import(app.bowerDirectory + '/dragula/dist/dragula.css');
 
   /*
     This build file specifes the options for the dummy test app of this

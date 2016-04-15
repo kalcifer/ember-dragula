@@ -16,11 +16,12 @@ export default Component.extend({
   },
 
 
-  didReceiveAttrs: function (attrs) {
+  didReceiveAttrs: function () {
     this._super(...arguments);
     Ember.run.next(() => {
       let drake = this.getDrake();
-      if (drake && !drake.containers.contains(this.element)) {
+      //if (drake && !drake.containers.contains(this.element)) {
+      if(drake){
         drake.containers.push(this.element);
       }
     });
