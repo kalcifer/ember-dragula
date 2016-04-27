@@ -1,32 +1,33 @@
-{{#ember-dragula config=model.dragulaoptions dragulaEvent='dragulaEvent' }}
+<p>Drag and drop any of the items within its container,
+	or between the two containers.</p>
+{{#ember-dragula config=model.dragulaoptions drag='dragulaEvent' drop='dragulaEvent' }}
+	<h3>Container 1</h3>
 	{{#ember-dragula-container }}
-		{{#tree-component data='We ll move these items'}}
+		{{#tree-component data='Container 1 - 1st item (this is an Ember component)'}}
 		{{/tree-component}}
 		<div>
-			We ll move these items
+			Container 1 - 2nd item (the rest are all elements)
 		</div>
 		<div>
-			To test if everything is fine.
+			Container 1 - 3rd item
 		</div>
 		<div>
-			We ll move these items
-		</div>
-		<div>
-			To test if everything is fine.
+			Container 1 - 4th item
 		</div>
 	{{/ember-dragula-container}}
+	<h3>Container 2</h3>
 	{{#ember-dragula-container created='created' parent=model.parent}}
 		<div>
-			We ll move these items
+			Container 2 - 1st item
 		</div>
 		<div>
-			To test if everything is fine.
+			Container 2 - 2nd item
 		</div>
 		<div>
-			We ll move these items
+			Container 2 - 3rd item
 		</div>
 		<div>
-			To test if everything is fine.
+			Container 2 - 4th item
 		</div>
 	{{/ember-dragula-container}}
 {{/ember-dragula}}
