@@ -30,7 +30,7 @@ export default Component.extend({
   unRegisterFromDrake: on('willDestroyElement', function () {
     let drake = this.getDrake();
     if (drake && drake.containers) {
-      drake.containers.removeObject(this.element)
+      drake.containers.removeObject(this.element);
     }
   })
 });
