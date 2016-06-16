@@ -28,9 +28,10 @@ export default Component.extend({
         if (!this.get('config.enabledEvents')) {
             return;
         }
+        const drake = this.get('drake');
         this.get('config.enabledEvents').forEach(eventName => {
-            this.get('drake').on(eventName, (...args) => {
-                this.sendAction(eventName, ...args);
+            drake.on(eventName, (...args) => {
+                this.sendAction(eventName, ...args.concat(drake));
             });
         });
     },
