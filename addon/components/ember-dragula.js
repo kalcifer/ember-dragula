@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import canUseDOM from 'ember-dragula/utils/can-use-dom';
 
 const {Component, on} = Ember;
 
@@ -17,10 +18,12 @@ export default Component.extend({
     },
 
     didReceiveAttrs: function () {
-        this._super(...arguments);        
+        this._super(...arguments);
         this.destroyDrake();
         var options = this.get('config.options') || {};
-        this.set('drake', window.dragula(options));
+        if (canUseDOM) {
+            this.set('drake', window.dragula(options));
+        }
         this.setEventListeners();
     },
 
