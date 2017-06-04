@@ -21,7 +21,7 @@ export default Ember.Route.extend({
 		'dragulaEvent':function(){
 			// see https://github.com/bevacqua/dragula#drakeon-events
 			// for the description of arguments passed by each event
-			console.log(arguments);
+			Ember.debug(arguments);
 		}
 	}
 });
